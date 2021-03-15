@@ -1,4 +1,4 @@
 
-public abstract class Mitarbeiter {
+public class Mitarbeiter extends Angestellter {
 
 }
