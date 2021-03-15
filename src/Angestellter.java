@@ -1,4 +1,4 @@
 
-public abstract  class Angestellter {
+public abstract class Angestellter {
 
 }
