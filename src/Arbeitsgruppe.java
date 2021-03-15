@@ -3,6 +3,10 @@ public class Arbeitsgruppe {
 	private String Name;
 	private String Beschreibung;
 	
+	public Arbeitsgruppe (String Name, String Beschreibung) {
+		this.Name = Name;
+		this.Beschreibung = Beschreibung;
+	}
 	
 	public String getName() {
 		return Name;
