@@ -1,4 +1,4 @@
 
-public class Externer {
+public class Externer extends Mitarbeiter {
 
 }
