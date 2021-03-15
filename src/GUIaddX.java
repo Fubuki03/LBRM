@@ -11,9 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class GUI extends JFrame {
+public class GUIaddX extends JFrame {
 	
-	public GUI(){
+	public GUIaddX(){
 		
 	}
 
