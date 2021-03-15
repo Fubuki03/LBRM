@@ -11,9 +11,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class GUIaddM extends JFrame {
+public class GUIaddM extends JFrame implements ActionListener{
 	
 	public GUIaddM(){
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 
