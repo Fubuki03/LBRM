@@ -1,4 +1,4 @@
 
-public class Mitarbeiter {
+public class abstract Mitarbeiter {
 
 }
