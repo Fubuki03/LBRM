@@ -1,5 +1,5 @@
-
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,15 +9,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIremove extends JFrame implements ActionListener{
+public class GUIadd extends JFrame implements ActionListener{
 	
 	private JFrame frame;
 	
-	public GUIremove(){
+	public GUIadd(){
 		
 		initialize();
 		
@@ -33,18 +34,23 @@ public class GUIremove extends JFrame implements ActionListener{
 		Titel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(Titel, BorderLayout.NORTH);
 		
-		JLabel Abfrage = new JLabel("Wollen Sie den Benutzer (xy) wirklich lÃ¶schen?\n\n");
+		JLabel Abfrage = new JLabel("Wollen Sie einen Externen Mitarbeiter oder einen Mitarbeiter hinzuf\u00FCgen?");
 		Abfrage.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(Abfrage, BorderLayout.CENTER);
 		
-		JSplitPane splitPane = new JSplitPane();
-		frame.getContentPane().add(splitPane, BorderLayout.SOUTH);
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton delete = new JButton("Benutzer löschen");
-		splitPane.setRightComponent(delete);
+		JButton Exit = new JButton("Abbrechen");
+		panel.add(Exit);
 		
-		JButton cancel = new JButton("Abbrechen");
-		splitPane.setLeftComponent(cancel);
+		JRadioButton Extern = new JRadioButton("Externer Mitarbeiter");
+		Extern.setSelected(true);
+		panel.add(Extern);
+		
+		JRadioButton Mitarbeiter = new JRadioButton("Mitarbeiter");
+		panel.add(Mitarbeiter);
 		
 	}
 	
