@@ -3,8 +3,8 @@ public class Externer extends Angestellter {
 	private int extnr;
 	
 	public Externer(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr,
-			Arbeitsgruppe Arbeitsgruppe, int extnr) {
-		super(name, Vorname, EMail, Telefon, Wohnort, Geburtsjahr, Arbeitsgruppe);
+			Arbeitsgruppe Arbeitsgruppe, int extnr, Boolean External) {
+		super(name, Vorname, EMail, Telefon, Wohnort, Geburtsjahr, Arbeitsgruppe, External);
 		this.extnr = extnr;
 		
 	}
