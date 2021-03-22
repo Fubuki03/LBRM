@@ -23,35 +23,37 @@ public class GUIremove extends JFrame implements ActionListener{
 		
 	}
 
-	private void initialize() {
+	public initialize() {
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 500, 250);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JLabel lblNewLabel = new JLabel("Benutzer Verwaltung LBRM");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		frame.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
+		JLabel Titel = new JLabel("Benutzer Verwaltung LBRM");
+		Titel.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(Titel, BorderLayout.NORTH);
 		
-		JLabel lblNewLabel_1 = new JLabel("Wollen Sie den Benutzer (xy) wirklich löschen?\n\n");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		frame.getContentPane().add(lblNewLabel_1, BorderLayout.CENTER);
+		JLabel Abfrage = new JLabel("Wollen Sie den Benutzer (xy) wirklich löschen?\n\n");
+		Abfrage.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(Abfrage, BorderLayout.CENTER);
 		
 		JSplitPane splitPane = new JSplitPane();
 		frame.getContentPane().add(splitPane, BorderLayout.SOUTH);
 		
-		JButton btnBenutzerLschen = new JButton("Benutzer löschen");
-		splitPane.setRightComponent(btnBenutzerLschen);
+		JButton delete = new JButton("Benutzer löschen");
+		splitPane.setRightComponent(delete);
 		
-		JButton btnAbbrechen = new JButton("Abbrechen");
-		splitPane.setLeftComponent(btnAbbrechen);
+		JButton cancel = new JButton("Abbrechen");
+		splitPane.setLeftComponent(cancel);
 		
 	}
 	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		if (e.getSource() == delete) {
+			model.addElement(t1.getText());
+		}
 		
 	}
 
