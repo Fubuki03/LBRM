@@ -12,6 +12,13 @@ public class Betrieb {
 		return userlist;
 	}
 	
+	public Angestellter getByID(int ID) {
+		Angestellter A = new Angestellter();
+		retrun
+		
+	}
+	
+	
 	
 		
 }
