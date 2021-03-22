@@ -44,6 +44,7 @@ public class GUIadd extends JFrame implements ActionListener{
 		
 		JButton Exit = new JButton("Abbrechen");
 		panel.add(Exit);
+		Exit.addActionListener(this);
 		
 		JRadioButton Extern = new JRadioButton("Externer Mitarbeiter");
 		Extern.setSelected(true);
@@ -52,12 +53,16 @@ public class GUIadd extends JFrame implements ActionListener{
 		JRadioButton Mitarbeiter = new JRadioButton("Mitarbeiter");
 		panel.add(Mitarbeiter);
 		
+		JButton Next = new JButton("Weiter");
+		panel.add(Next);
+		Next.addActionListener(this);
+		
 	}
 	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == delete) {
+		if (e.getSource() == panel.Next) {
 			model.addElement(t1.getText());
 		}
 		
