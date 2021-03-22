@@ -23,7 +23,7 @@ public class GUIremove extends JFrame implements ActionListener{
 		
 	}
 
-	public initialize() {
+	private void initialize() {
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 500, 250);
