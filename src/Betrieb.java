@@ -3,8 +3,16 @@ import java.util.ArrayList;
 
 public class Betrieb {
 	
+	
 	public Betrieb() {
 		
+	}
+	
+	
+	public void AddAngestellter (Angestellter A) {
+		if(A.getExternal() == false) {
+			
+		}
 	}
 	
 	public ArrayList<Angestellter> getAllPersons () {
@@ -12,11 +20,13 @@ public class Betrieb {
 		return userlist;
 	}
 	
-	public Angestellter getByID(int ID) {
-		Angestellter A = new Angestellter();
-		retrun
-		
+	public Angestellter get(int ID) {
+		Angestellter A = null;
+		return A;
 	}
+	
+	
+	
 	
 	
 	
