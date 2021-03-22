@@ -6,12 +6,11 @@ betriebslogik
 		EditUser
 		DeleteUser
 		FindUser
-	getAll
+		getAll
 Data
 	Search
 		getAllPersons
 		getPerson
-
 	InsertPerson
 	
 	
