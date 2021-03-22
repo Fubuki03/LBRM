@@ -8,8 +8,9 @@ public abstract class Angestellter {
 	private String Wohnort;
 	private String Geburtsjahr;
 	private Arbeitsgruppe Arbeitsgruppe;
+	private Boolean External;
 
-	public Angestellter(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr, Arbeitsgruppe Arbeitsgruppe) {
+	public Angestellter(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr, Arbeitsgruppe Arbeitsgruppe, Boolean External) {
 		this.Name = name;
 		this.Vorname = Vorname;
 		this.EMail = EMail;
@@ -17,6 +18,7 @@ public abstract class Angestellter {
 		this.Wohnort = Wohnort;
 		this.Geburtsjahr = Geburtsjahr;
 		this.Arbeitsgruppe = Arbeitsgruppe;
+		this.External = External;
 
 	}
 
