@@ -42,9 +42,11 @@ public class GUIremove extends JFrame implements ActionListener{
 		
 		JButton delete = new JButton("Benutzer löschen");
 		splitPane.setRightComponent(delete);
+		delete.addActionListener(this);
 		
 		JButton cancel = new JButton("Abbrechen");
 		splitPane.setLeftComponent(cancel);
+		cancel.addActionListener(this);
 		
 	}
 	

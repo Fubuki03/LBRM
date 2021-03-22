@@ -21,8 +21,17 @@ public class GUICREATOR {
 
 	private JFrame frame;
 	private JTextField textField;
-	private JTextField searchtxt;
-	private JTable Users;
+	private JTextField username;
+	private JTextField password;
+	private JTextField workgroup;
+	private JTextField name;
+	private JTextField vname;
+	private JTextField email;
+	private JTextField phone;
+	private JTextField home;
+	private JTextField birthdate;
+	private JTextField vnumber;
+	private JTextField mnumber;
 
 	/**
 	 * Launch the application.
@@ -59,54 +68,109 @@ public class GUICREATOR {
 		Titel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(Titel, BorderLayout.NORTH);
 		
-		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.SOUTH);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		JButton add = new JButton("Neuen benutzer erstellen");
-		panel.add(add);
-		
-		JButton details = new JButton("Details");
-		panel.add(details);
-		
-		JButton edit = new JButton("Bearbeiten");
-		panel.add(edit);
-		
-		JButton delete = new JButton("L\u00F6schen");
-		panel.add(delete);
-		
-		searchtxt = new JTextField();
-		searchtxt.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel.add(searchtxt);
-		searchtxt.setColumns(10);
-		
-		JButton search = new JButton("Suchen");
-		panel.add(search);
-		
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
+		panel_1.setLayout(new GridLayout(11, 2, 0, 0));
 		
-		JSplitPane List = new JSplitPane();
-		List.setOrientation(JSplitPane.VERTICAL_SPLIT);
-		panel_1.add(List);
+		JLabel Username = new JLabel("Benutzernamen");
+		Username.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Username);
 		
-		Users = new JTable();
-		Users.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null},
-			},
-			new String[] {
-				"ID", "Name", "Vorname", "E-Mail"
-			}
-		));
-		Users.getColumnModel().getColumn(0).setPreferredWidth(150);
-		Users.getColumnModel().getColumn(1).setPreferredWidth(150);
-		Users.getColumnModel().getColumn(2).setPreferredWidth(150);
-		Users.getColumnModel().getColumn(3).setPreferredWidth(200);
-		List.setRightComponent(Users);
+		username = new JTextField();
+		panel_1.add(username);
+		username.setColumns(10);
 		
-		JLabel ID = new JLabel("ID                                              Name                                         Vorname                                    E-Mail");
-		List.setLeftComponent(ID);
+		JLabel Password = new JLabel("Passwort");
+		Password.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Password);
+		
+		password = new JTextField();
+		panel_1.add(password);
+		password.setColumns(10);
+		
+		JLabel Workgroup = new JLabel("Arbeitsgruppe");
+		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Workgroup);
+		
+		workgroup = new JTextField();
+		panel_1.add(workgroup);
+		workgroup.setColumns(10);
+		
+		JLabel Name = new JLabel("Name");
+		Name.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Name);
+		
+		name = new JTextField();
+		panel_1.add(name);
+		name.setColumns(10);
+		
+		JLabel Vname = new JLabel("Vorname");
+		Vname.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Vname);
+		
+		vname = new JTextField();
+		panel_1.add(vname);
+		vname.setColumns(10);
+		
+		JLabel Email = new JLabel("E-Mail");
+		Email.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Email);
+		
+		email = new JTextField();
+		panel_1.add(email);
+		email.setColumns(10);
+		
+		JLabel Phone = new JLabel("Telefonnummer");
+		Phone.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Phone);
+		
+		phone = new JTextField();
+		panel_1.add(phone);
+		phone.setColumns(10);
+		
+		JLabel Home = new JLabel("Wohnort");
+		Home.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Home);
+		
+		home = new JTextField();
+		panel_1.add(home);
+		home.setColumns(10);
+		
+		JLabel Birthdate = new JLabel("Geburtstag");
+		Birthdate.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Birthdate);
+		
+		birthdate = new JTextField();
+		panel_1.add(birthdate);
+		birthdate.setColumns(10);
+		
+		JLabel Vnumber = new JLabel("Vertragsnummer");
+		Vnumber.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Vnumber);
+		
+		vnumber = new JTextField();
+		panel_1.add(vnumber);
+		vnumber.setColumns(10);
+		
+		JLabel Mnumber = new JLabel("Mitarbeiternummer");
+		Mnumber.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Mnumber);
+		
+		mnumber = new JTextField();
+		panel_1.add(mnumber);
+		mnumber.setColumns(10);
+		
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		
+		JButton cancel = new JButton("Abbrechen");
+		panel.add(cancel);
+		
+		JLabel txt = new JLabel("Mitarbeiter erstellen");
+		panel.add(txt);
+		
+		JButton next = new JButton("Fertig");
+		panel.add(next);
 	}
 
 }

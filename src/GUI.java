@@ -43,15 +43,19 @@ public class GUI extends JFrame implements ActionListener{
 		
 		JButton add = new JButton("Neuen benutzer erstellen");
 		panel.add(add);
+		add.addActionListener(this);
 		
 		JButton details = new JButton("Details");
 		panel.add(details);
+		details.addActionListener(this);
 		
 		JButton edit = new JButton("Bearbeiten");
 		panel.add(edit);
+		edit.addActionListener(this);
 		
 		JButton delete = new JButton("L\u00F6schen");
 		panel.add(delete);
+		delete.addActionListener(this);
 		
 		JTextField searchtxt = new JTextField();
 		searchtxt.setFont(new Font("Arial", Font.PLAIN, 11));
@@ -60,6 +64,7 @@ public class GUI extends JFrame implements ActionListener{
 		
 		JButton search = new JButton("Suchen");
 		panel.add(search);
+	    search.addActionListener(this);
 		
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
@@ -90,8 +95,8 @@ public class GUI extends JFrame implements ActionListener{
 	
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == delete) {
+	public void actionPerformed(ActionEvent ae) {
+		if (ae.getSource() == this.delete) {
 			model.addElement(t1.getText());
 		}
 		
