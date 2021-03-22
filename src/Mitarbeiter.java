@@ -7,8 +7,8 @@ public class Mitarbeiter extends Angestellter {
 	private int Vertragsnr;
 
 	public Mitarbeiter(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr,
-			Arbeitsgruppe Arbeitsgruppe, String username, String password, int mitarbnr, int vertragsnr) {
-		super(name, Vorname, EMail, Telefon, Wohnort, Geburtsjahr, Arbeitsgruppe);
+			Arbeitsgruppe Arbeitsgruppe, String username, String password, int mitarbnr, int vertragsnr, Boolean External) {
+		super(name, Vorname, EMail, Telefon, Wohnort, Geburtsjahr, Arbeitsgruppe, External);
 		this.Username = username;
 		this.Password = password;
 		this.Mitarbnr = mitarbnr;
