@@ -46,7 +46,5 @@ public class Mitarbeiter extends Angestellter {
 	public void setVertragsnr(int vertragsnr) {
 		Vertragsnr = vertragsnr;
 	}
-	
-	
 
 }
