@@ -15,8 +15,7 @@ public class Actions {
 	}
 
 	public void EditUser(Angestellter A) {
-		System.out.println("Test123");
-
+		
 	}
 
 	public void DeleteUser(Angestellter A) {
