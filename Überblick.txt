@@ -1,0 +1,16 @@
+Gui
+
+betriebslogik
+	Actions
+		AddAngestellter
+		EditUser
+		DeleteUser
+		FindUser
+		getAll
+Data
+	Search
+		getAllPersons
+		getPerson
+	InsertPerson
+	
+	
