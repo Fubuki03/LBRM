@@ -13,11 +13,11 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIremove extends JFrame implements ActionListener{
+public class GUIaddM extends JFrame{
 	
 	private JFrame frame;
 	
-	public GUIremove(){
+	public GUIaddM(){
 		
 		initialize();
 		
@@ -130,24 +130,29 @@ public class GUIremove extends JFrame implements ActionListener{
 		
 		JButton cancel = new JButton("Abbrechen");
 		panel.add(cancel);
+	    cancel.addActionListener(new ActionListener(){  
+	    	public void actionPerformed(ActionEvent e){  
+
+
+	        	
+	        	
+	        	
+	    	}  
+	    	});  
 		
 		JLabel txt = new JLabel("Mitarbeiter erstellen");
 		panel.add(txt);
 		
 		JButton next = new JButton("Fertig");
 		panel.add(next);
+	    next.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+
+
+	        	
+	        	
+	        	
+	        }  
+	        });  
 	}
-
-
-	
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == delete) {
-			model.addElement(t1.getText());
-		}
-		
-	}
-
-	
 }

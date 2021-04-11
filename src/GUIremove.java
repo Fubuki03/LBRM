@@ -13,9 +13,9 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIremove extends JFrame implements ActionListener{
+public class GUIremove extends JFrame{
 	
-	private JFrame frame;
+	public JFrame frame;
 	
 	public GUIremove(){
 		
@@ -23,7 +23,7 @@ public class GUIremove extends JFrame implements ActionListener{
 		
 	}
 
-	private void initialize() {
+	public void initialize() {
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 500, 250);
@@ -42,22 +42,26 @@ public class GUIremove extends JFrame implements ActionListener{
 		
 		JButton delete = new JButton("Benutzer löschen");
 		splitPane.setRightComponent(delete);
-		delete.addActionListener(this);
+	    delete.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){
+	        	
+	        	
+	        	
+	        	
+	        }  
+	        });  
 		
 		JButton cancel = new JButton("Abbrechen");
 		splitPane.setLeftComponent(cancel);
-		cancel.addActionListener(this);
-		
-	}
-	
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == delete) {
-			model.addElement(t1.getText());
-		}
-		
-	}
+	    cancel.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
 
-	
+
+	        	
+	        	
+	        	
+	        }  
+	        });  
+		
+	}
 }

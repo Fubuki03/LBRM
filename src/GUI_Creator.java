@@ -1,29 +1,45 @@
 import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIaddX extends JFrame{
-	
+public class GUI_Creator {
+
 	private JFrame frame;
-	
-	public GUIaddX(){
-		
-		initialize();
-		
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI_Creator window = new GUI_Creator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
+	/**
+	 * Create the application.
+	 */
+	public GUI_Creator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
 	private void initialize() {
-		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,29 +121,12 @@ public class GUIaddX extends JFrame{
 		
 		JButton cancel = new JButton("Abbrechen");
 		panel.add(cancel);
-	    cancel.addActionListener(new ActionListener(){  
-	    	public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
-	    	}  
-	    	});  
 		
 		JLabel txt = new JLabel("Externer Mitarbeiter erstellen");
 		panel.add(txt);
 		
 		JButton next = new JButton("Fertig");
 		panel.add(next);
-	    next.addActionListener(new ActionListener(){  
-	    	public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
-	    	}  
-	    	});  
 	}
+
 }

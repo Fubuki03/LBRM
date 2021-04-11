@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-public class GUI extends JFrame implements ActionListener{
+public class GUI extends JFrame{
 	
 	private JFrame frame;
 	
@@ -43,19 +43,50 @@ public class GUI extends JFrame implements ActionListener{
 		
 		JButton add = new JButton("Neuen benutzer erstellen");
 		panel.add(add);
-		add.addActionListener(this);
+	    add.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+
+
+	        	
+	        	
+	        	
+	        }  
+	        });  
 		
 		JButton details = new JButton("Details");
 		panel.add(details);
-		details.addActionListener(this);
+	    details.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+
+
+	        	
+	        	
+	        	
+	        }  
+	        }); 
 		
 		JButton edit = new JButton("Bearbeiten");
 		panel.add(edit);
-		edit.addActionListener(this);
+	    edit.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+
+
+	        	
+	        	
+	        	
+	        }  
+	        });  
 		
 		JButton delete = new JButton("L\u00F6schen");
 		panel.add(delete);
-		delete.addActionListener(this);
+	    delete.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+	                
+	                
+	                
+	                
+	        }  
+	        });  
 		
 		JTextField searchtxt = new JTextField();
 		searchtxt.setFont(new Font("Arial", Font.PLAIN, 11));
@@ -64,7 +95,16 @@ public class GUI extends JFrame implements ActionListener{
 		
 		JButton search = new JButton("Suchen");
 		panel.add(search);
-	    search.addActionListener(this);
+	    search.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+
+	        	
+	        	
+	        	
+	        	
+	        	
+	        }  
+	        });  
 		
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
@@ -92,15 +132,4 @@ public class GUI extends JFrame implements ActionListener{
 		List.setLeftComponent(ID);
 		
 	}
-	
-	
-	@Override
-	public void actionPerformed(ActionEvent ae) {
-		if (ae.getSource() == this.delete) {
-			model.addElement(t1.getText());
-		}
-		
-	}
-
-	
 }

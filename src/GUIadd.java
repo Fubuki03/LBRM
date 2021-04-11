@@ -14,7 +14,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIadd extends JFrame implements ActionListener{
+public class GUIadd extends JFrame{
 	
 	private JFrame frame;
 	
@@ -42,9 +42,17 @@ public class GUIadd extends JFrame implements ActionListener{
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton Exit = new JButton("Abbrechen");
-		panel.add(Exit);
-		Exit.addActionListener(this);
+		JButton exit = new JButton("Abbrechen");
+		panel.add(exit);
+	    exit.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+
+
+	        	
+	        	
+	        	
+	        }  
+	        });  
 		
 		JRadioButton Extern = new JRadioButton("Externer Mitarbeiter");
 		Extern.setSelected(true);
@@ -53,20 +61,16 @@ public class GUIadd extends JFrame implements ActionListener{
 		JRadioButton Mitarbeiter = new JRadioButton("Mitarbeiter");
 		panel.add(Mitarbeiter);
 		
-		JButton Next = new JButton("Weiter");
-		panel.add(Next);
-		Next.addActionListener(this);
-		
-	}
-	
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == panel.Next) {
-			model.addElement(t1.getText());
-		}
-		
-	}
+		JButton next = new JButton("Weiter");
+		panel.add(next);
+	    next.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
 
-	
+
+	        	
+	        	
+	        	
+	        }  
+	        });  
+	}
 }
