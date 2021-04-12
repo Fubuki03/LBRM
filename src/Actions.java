@@ -23,13 +23,8 @@ public class Actions {
 
 	}
 	
-<<<<<<< Updated upstream
-	public static String[] getGroups() {
-		return Data.getGroups();
-=======
 	public ArrayList<Arbeitsgruppe> getGroups() {
 		return Data.getInstance().getGroups();
->>>>>>> Stashed changes
 
 	}
 
