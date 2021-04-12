@@ -24,9 +24,12 @@ public class Data {
 	public void InsertPerson(Angestellter A) {
 		userlist.add(A);
 	}
-
+	
+	public ArrayList<Angestellter> getAllUsers() {
+		return userlist;
+	}
+	
 	public ArrayList<Arbeitsgruppe> getGroups() {
-
 		return Arbeitsgruppe;
 	}
 
