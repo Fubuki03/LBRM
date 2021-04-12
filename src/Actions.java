@@ -14,9 +14,6 @@ public class Actions {
 		}
 	}
 
-	public void EditUser(Angestellter A) {
-		
-	}
 
 	public void DeleteUser(Angestellter A) {
 
