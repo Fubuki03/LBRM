@@ -11,9 +11,5 @@ private static String[] Groups = {"Poduktions", "Forschung", "Lieferanten"};
 	public static String[] getGroups() {
 		return Groups;
 	}
-
-	public void setGroups(String[] groups) {
-		Groups = groups;
-	}
 		
 }
