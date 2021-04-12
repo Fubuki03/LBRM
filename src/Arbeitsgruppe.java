@@ -8,6 +8,15 @@ public class Arbeitsgruppe {
 		this.Beschreibung = Beschreibung;
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		return Name;
+	}
+
+
+
 	public String getName() {
 		return Name;
 	}
