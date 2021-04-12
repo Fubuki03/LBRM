@@ -6,11 +6,11 @@ public class Actions {
 		if (A.getExternal() == false) {
 			Angestellter User = new Externer(null, null, null, null, null, null, null, 0, null);
 			User = A;
-			Data.InsertPerson(User);
+			Data.getInstance().InsertPerson(User);
 		} else  {
 			Angestellter User = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
 			User = A;
-			Data.InsertPerson(User);
+			Data.getInstance().InsertPerson(User);
 		}
 	}
 
@@ -23,8 +23,13 @@ public class Actions {
 
 	}
 	
+<<<<<<< Updated upstream
 	public static String[] getGroups() {
 		return Data.getGroups();
+=======
+	public ArrayList<Arbeitsgruppe> getGroups() {
+		return Data.getInstance().getGroups();
+>>>>>>> Stashed changes
 
 	}
 
