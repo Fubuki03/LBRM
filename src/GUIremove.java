@@ -58,8 +58,7 @@ public class GUIremove{
 	        frame.dispose();
 		    GUI G1 = new GUI();
 	        }  
-	        }); 
-	    s
+	        });
 	    frame.setVisible(true);
 		
 	}
