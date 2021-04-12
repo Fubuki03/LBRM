@@ -6,11 +6,11 @@ public class Actions {
 		if (A.getExternal() == false) {
 			Angestellter User = new Externer(null, null, null, null, null, null, null, 0, null);
 			User = A;
-			InsertPerson.InsertPerson(User);
+			Data.InsertPerson(User);
 		} else  {
 			Angestellter User = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
 			User = A;
-			InsertPerson.InsertPerson(User);
+			Data.InsertPerson(User);
 		}
 	}
 
@@ -23,6 +23,11 @@ public class Actions {
 	}
 
 	public void FindUser(Angestellter A) {
+
+	}
+	
+	public String[] getGroups() {
+		return Data.getGroups();
 
 	}
 
