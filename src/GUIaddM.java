@@ -59,7 +59,7 @@ public class GUIaddM{
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
 		
-		JComboBox workgroup = new JComboBox(new Vector(Data.getInstance().getGroups()));
+		JComboBox workgroup = new JComboBox(new Vector(Actions.getGroups()));
 		panel_1.add(workgroup);
 		
 		JLabel Name = new JLabel("Name");
@@ -156,7 +156,9 @@ public class GUIaddM{
 		    newUser.setWohnort(home.getText());
 		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
 		    newUser.setMitarbnr(Integer.parseInt(mnumber.getText()));
-	       
+		    newUser.setPassword(password.getText());
+		    newUser.setUsername(username.getText());
+		    Actions.
 			frame.dispose();
 			GUI G1 = new GUI();			
 	        }  
