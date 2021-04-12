@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -46,11 +47,8 @@ public class GUIadd{
 		panel.add(exit);
 	    exit.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
+		    frame.dispose();
+			GUI G1 = new GUI();	
 	        }  
 	        });  
 		
@@ -61,15 +59,21 @@ public class GUIadd{
 		JRadioButton Mitarbeiter = new JRadioButton("Mitarbeiter");
 		panel.add(Mitarbeiter);
 		
+		ButtonGroup group = new ButtonGroup();
+		group.add(Extern);
+		group.add(Mitarbeiter);
+		
 		JButton next = new JButton("Weiter");
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){  
-	        public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
+	        public void actionPerformed(ActionEvent e){  	
+		    frame.dispose();
+		    if(Extern.isSelected()){
+	            GUIaddX G4 = new GUIaddX();
+	        }
+		    if(Mitarbeiter.isSelected()){
+	            GUIaddM G5 = new GUIaddM();
+	        }
 	        }  
 	        });  
 	    

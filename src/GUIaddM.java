@@ -132,11 +132,8 @@ public class GUIaddM{
 		panel.add(cancel);
 	    cancel.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
+			frame.dispose();
+			GUI G1 = new GUI();		
 	    	}  
 	    	});  
 		
@@ -149,9 +146,8 @@ public class GUIaddM{
 	        public void actionPerformed(ActionEvent e){  
 
 
-	        	
-	        	
-	        	
+			frame.dispose();
+			GUI G1 = new GUI();			
 	        }  
 	        });  
 	    
