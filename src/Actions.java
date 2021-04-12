@@ -14,6 +14,16 @@ public class Actions {
 		}
 	}
 
+		
+	public static ArrayList<Arbeitsgruppe> getGroups() {
+		return Data.getInstance().getGroups();
+
+	}
+
+	public static ArrayList<Angestellter> getAllUsers() {
+		return Data.getInstance().getAllUsers();
+	}
+	
 
 	public void DeleteUser(Angestellter A) {
 
@@ -21,15 +31,6 @@ public class Actions {
 
 	public void FindUser(Angestellter A) {
 
-	}
-		
-	public static ArrayList<Arbeitsgruppe> getGroups() {
-		return Data.getInstance().getGroups();
-
-	}
-
-	public static ArrayList<Angestellter> getAll() {
-		return Data.getInstance().userlist;
 	}
 
 }
