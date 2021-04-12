@@ -74,8 +74,8 @@ public abstract class Angestellter {
 		return Arbeitsgruppe;
 	}
 
-	public void setArbeitsgruppe(Arbeitsgruppe arbeitsgruppe) {
-		Arbeitsgruppe = arbeitsgruppe;
+	public void setArbeitsgruppe(Object object) {
+		Arbeitsgruppe = (Arbeitsgruppe) object;
 	}
 
 	public Boolean getExternal() {

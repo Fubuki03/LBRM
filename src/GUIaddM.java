@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -57,9 +58,8 @@ public class GUIaddM{
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
 		
-		JTextField workgroup = new JTextField();
+		JComboBox workgroup = new JComboBox(Actions.getGroups());
 		panel_1.add(workgroup);
-		workgroup.setColumns(10);
 		
 		JLabel Name = new JLabel("Name");
 		Name.setHorizontalAlignment(SwingConstants.CENTER);
@@ -144,10 +144,17 @@ public class GUIaddM{
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-
 	        Angestellter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
-	        newUser.setArbeitsgruppe(workgroup.getSelectedValue());
-	        newUser
+		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+		    newUser.setEMail(email.getText());
+		    newUser.setExternal(false);
+		    newUser.setGeburtsjahr(birthdate.getText());
+		    newUser.setName(name.getText());
+		    newUser.setTelefon(phone.getText());
+		    newUser.setVorname(vname.getText());
+		    newUser.setWohnort(home.getText());
+
+	       
 			frame.dispose();
 			GUI G1 = new GUI();			
 	        }  

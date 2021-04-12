@@ -23,7 +23,7 @@ public class Actions {
 
 	}
 	
-	public String[] getGroups() {
+	public static String[] getGroups() {
 		return Data.getGroups();
 
 	}
