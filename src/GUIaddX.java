@@ -98,7 +98,7 @@ public class GUIaddX{
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
 		
-		JComboBox workgroup = new JComboBox(new Vector(Data.getInstance().getGroups()));
+		JComboBox workgroup = new JComboBox(new Vector(Actions.getGroups()));
 		panel_1.add(workgroup);
 		
 		JPanel panel = new JPanel();
@@ -128,7 +128,8 @@ public class GUIaddX{
 			newUser.setName(name.getText());
 			newUser.setTelefon(phone.getText());
 			newUser.setVorname(vname.getText());
-			newUser.setWohnort(home.getText());        	
+			newUser.setWohnort(home.getText());  
+			Actions.get
 	    	frame.dispose();
 			GUI G1 = new GUI();	
 	    	}  
