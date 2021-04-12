@@ -13,7 +13,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIremove extends JFrame{
+public class GUIremove{
 	
 	public JFrame frame;
 	
@@ -33,7 +33,7 @@ public class GUIremove extends JFrame{
 		Titel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(Titel, BorderLayout.NORTH);
 		
-		JLabel Abfrage = new JLabel("Wollen Sie den Benutzer (xy) wirklich lÃ¶schen?\n\n");
+		JLabel Abfrage = new JLabel("Wollen Sie den Benutzer (xy) wirklich löschen?\n\n");
 		Abfrage.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(Abfrage, BorderLayout.CENTER);
 		
@@ -46,22 +46,21 @@ public class GUIremove extends JFrame{
 	        public void actionPerformed(ActionEvent e){
 	        	
 	        	
-	        	
-	        	
+		    frame.dispose();
+			GUI G1 = new GUI();	
 	        }  
 	        });  
 		
 		JButton cancel = new JButton("Abbrechen");
 		splitPane.setLeftComponent(cancel);
 	    cancel.addActionListener(new ActionListener(){  
-	        public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
+	        public void actionPerformed(ActionEvent e){
+	        frame.dispose();
+		    GUI G1 = new GUI();
 	        }  
-	        });  
+	        }); 
+	    s
+	    frame.setVisible(true);
 		
 	}
 }

@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-public class GUI extends JFrame{
+public class GUI{
 	
 	private JFrame frame;
 	
@@ -45,11 +45,8 @@ public class GUI extends JFrame{
 		panel.add(add);
 	    add.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
+	        frame.setVisible(false);
+	        GUIadd G2 = new GUIadd();	
 	        }  
 	        });  
 		
@@ -77,14 +74,12 @@ public class GUI extends JFrame{
 	        }  
 	        });  
 		
-		JButton delete = new JButton("L\u00F6schen");
+		JButton delete = new JButton("Löschen");
 		panel.add(delete);
 	    delete.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	                
-	                
-	                
-	                
+	        frame.dispose();    
+	        GUIremove G3 = new GUIremove();      
 	        }  
 	        });  
 		
@@ -130,6 +125,8 @@ public class GUI extends JFrame{
 		
 		JLabel ID = new JLabel("ID                                              Name                                         Vorname                                    E-Mail");
 		List.setLeftComponent(ID);
+		
+		frame.setVisible(true);
 		
 	}
 }

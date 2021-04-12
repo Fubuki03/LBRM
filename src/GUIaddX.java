@@ -12,7 +12,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIaddX extends JFrame{
+public class GUIaddX{
 	
 	private JFrame frame;
 	
@@ -129,5 +129,7 @@ public class GUIaddX extends JFrame{
 	        	
 	    	}  
 	    	});  
+	    
+	    frame.setVisible(true);
 	}
 }
