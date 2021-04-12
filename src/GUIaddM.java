@@ -158,7 +158,7 @@ public class GUIaddM{
 		    newUser.setMitarbnr(Integer.parseInt(mnumber.getText()));
 		    newUser.setPassword(password.getText());
 		    newUser.setUsername(username.getText());
-		    Actions.
+		    actions.
 			frame.dispose();
 			GUI G1 = new GUI();			
 	        }  
