@@ -120,9 +120,15 @@ public class GUIaddX{
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
-
-
-	        	
+		    Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
+			newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+			newUser.setEMail(email.getText());
+			newUser.setExternal(false);
+			newUser.setGeburtsjahr(birthdate.getText());
+			newUser.setName(name.getText());
+			newUser.setTelefon(phone.getText());
+			newUser.setVorname(vname.getText());
+			newUser.setWohnort(home.getText());        	
 	    	frame.dispose();
 			GUI G1 = new GUI();	
 	    	}  
