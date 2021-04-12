@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -97,7 +98,7 @@ public class GUIaddX{
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
 		
-		JComboBox workgroup = new JComboBox(Actions.getGroups());
+		JComboBox workgroup = new JComboBox(new Vector(Data.getInstance().getGroups()));
 		panel_1.add(workgroup);
 		
 		JPanel panel = new JPanel();
