@@ -15,8 +15,6 @@ public class Arbeitsgruppe {
 		return Name;
 	}
 
-
-
 	public String getName() {
 		return Name;
 	}
