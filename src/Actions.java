@@ -22,15 +22,14 @@ public class Actions {
 	public void FindUser(Angestellter A) {
 
 	}
-	
-	public ArrayList<Arbeitsgruppe> getGroups() {
+		
+	public static ArrayList<Arbeitsgruppe> getGroups() {
 		return Data.getInstance().getGroups();
 
 	}
 
-	public ArrayList<Angestellter> getAll() {
-		ArrayList<Angestellter> userlist = new ArrayList<Angestellter>();
-		return userlist;
+	public static ArrayList<Angestellter> getAll() {
+		return Data.getInstance().userlist;
 	}
 
 }
