@@ -58,7 +58,7 @@ public class GUIaddM{
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
 		
-		JComboBox workgroup = new JComboBox(Actions.getGroups());
+		JComboBox workgroup = new JComboBox(new Vector(Data.getInstance().getGroups()));
 		panel_1.add(workgroup);
 		
 		JLabel Name = new JLabel("Name");
