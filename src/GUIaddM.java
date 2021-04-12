@@ -145,7 +145,9 @@ public class GUIaddM{
 	    next.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
 
-
+	        Angestellter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
+	        newUser.setArbeitsgruppe(workgroup.getSelectedValue());
+	        newUser
 			frame.dispose();
 			GUI G1 = new GUI();			
 	        }  

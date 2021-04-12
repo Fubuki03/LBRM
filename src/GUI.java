@@ -54,25 +54,13 @@ public class GUI{
 		panel.add(details);
 	    details.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-
+	        	
 
 	        	
 	        	
 	        	
 	        }  
 	        }); 
-		
-		JButton edit = new JButton("Bearbeiten");
-		panel.add(edit);
-	    edit.addActionListener(new ActionListener(){  
-	        public void actionPerformed(ActionEvent e){  
-
-
-	        	
-	        	
-	        	
-	        }  
-	        });  
 		
 		JButton delete = new JButton("Löschen");
 		panel.add(delete);
@@ -92,7 +80,7 @@ public class GUI{
 		panel.add(search);
 	    search.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-
+	        	
 	        	
 	        	
 	        	
