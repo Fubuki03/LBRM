@@ -142,9 +142,9 @@ public class GUIaddM{
 		
 		JButton next = new JButton("Fertig");
 		panel.add(next);
-	    next.addActionListener(new ActionListener(){  
+	    next.addActionListener(new ActionListener(){
 	        public void actionPerformed(ActionEvent e){  
-	        Angestellter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
+	        Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
 		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
 		    newUser.setEMail(email.getText());
 		    newUser.setExternal(false);
@@ -153,7 +153,8 @@ public class GUIaddM{
 		    newUser.setTelefon(phone.getText());
 		    newUser.setVorname(vname.getText());
 		    newUser.setWohnort(home.getText());
-
+		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
+		    newUser.setMitarbnr(Integer.parseInt(mnumber.getText()));
 	       
 			frame.dispose();
 			GUI G1 = new GUI();			
