@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Data {
 
 	private static Data instance;
-	ArrayList<Angestellter> userlist = new ArrayList<Angestellter>();
-	ArrayList<Arbeitsgruppe> Arbeitsgruppe = new ArrayList<Arbeitsgruppe>();
+	private ArrayList<Angestellter> userlist = new ArrayList<Angestellter>();
+	private ArrayList<Arbeitsgruppe> Arbeitsgruppe = new ArrayList<Arbeitsgruppe>();
 	
 	private Data() {
 		Arbeitsgruppe.add(new Arbeitsgruppe ( "Labor", "Zuständig für die Erforschung neuer Produkte und Aufdecken Sicherheitsrisiken alter Produkten."));
