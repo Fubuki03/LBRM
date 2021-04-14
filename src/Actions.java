@@ -27,12 +27,11 @@ public class Actions {
 
 	}
 
-	public Angestellter FindUser(Angestellter A) {
-		for (Angestellter element : Data.getInstance().getAllUsers()) {
-			if (element.contains("Java")) {
-				return element;
-			}
-		}
-
-	}
+	/*
+	 * public Angestellter FindUser(Angestellter A) { for (Angestellter element :
+	 * Data.getInstance().getAllUsers()) { if (element.contains("Java")) { return
+	 * element; } }
+	 * 
+	 * }
+	 */
 }
