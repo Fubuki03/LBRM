@@ -96,7 +96,9 @@ public class GUI{
 		List.setOrientation(JSplitPane.VERTICAL_SPLIT);
 		panel_1.add(List);
 		
-		JTable Users = new JTable(Actions.getAllUsers());
+		
+//		JTable Users = new JTable(Actions.getAllUsers());
+		JTable Users = new JTable();
 		Users.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null},
