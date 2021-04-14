@@ -5,7 +5,7 @@ public class Externer extends Angestellter {
 	public Externer(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr,
 			Arbeitsgruppe Arbeitsgruppe, int extnr, Boolean External) {
 		super(name, Vorname, EMail, Telefon, Wohnort, Geburtsjahr, Arbeitsgruppe, External);
-		this.extnr = extnr;
+		this.extnr = xtnr;
 		
 	}
 
