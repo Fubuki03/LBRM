@@ -128,8 +128,7 @@ public class GUIaddX{
 			newUser.setName(name.getText());
 			newUser.setTelefon(phone.getText());
 			newUser.setVorname(vname.getText());
-			newUser.setWohnort(home.getText());  
-			Actions.get
+			newUser.setWohnort(home.getText());
 	    	frame.dispose();
 			GUI G1 = new GUI();	
 	    	}  
