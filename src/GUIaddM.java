@@ -11,6 +11,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -51,7 +52,7 @@ public class GUIaddM{
 		Password.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Password);
 		
-		JTextField password = new JTextField();
+		JPasswordField password = new JPasswordField();
 		panel_1.add(password);
 		password.setColumns(10);
 		
@@ -118,13 +119,13 @@ public class GUIaddM{
 		panel_1.add(vnumber);
 		vnumber.setColumns(10);
 		
-		JLabel Mnumber = new JLabel("Mitarbeiternummer");
-		Mnumber.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(Mnumber);
+		JLabel ID = new JLabel("ID");
+		ID.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(ID);
 		
-		JTextField mnumber = new JTextField();
-		panel_1.add(mnumber);
-		mnumber.setColumns(10);
+		JTextField id = new JTextField(6);
+		panel_1.add(id);
+		id.setColumns(1);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);
@@ -145,19 +146,19 @@ public class GUIaddM{
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){
 	        public void actionPerformed(ActionEvent e){  
-	        Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
-		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
-		    newUser.setEMail(email.getText());
-		    newUser.setExternal(false);
-		    newUser.setGeburtsjahr(birthdate.getText());
+	        Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, 0, null, null, null, null, null, 0);
 		    newUser.setName(name.getText());
-		    newUser.setTelefon(phone.getText());
 		    newUser.setVorname(vname.getText());
+		    newUser.setEMail(email.getText());
+		    newUser.setTelefon(phone.getText());
 		    newUser.setWohnort(home.getText());
-		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
-		    newUser.setMitarbnr(Integer.parseInt(mnumber.getText()));
-		    newUser.setPassword(password.getText());
+		    newUser.setID(Integer.parseInt(ID.getText()));
+		    newUser.setGeburtsjahr(birthdate.getText());
+		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+		    newUser.setExternal(false);
 		    newUser.setUsername(username.getText());
+		    newUser.setPassword(password.getText());
+		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
 			frame.dispose();
 			GUI G1 = new GUI();
 			boolean ret = Actions.AddAngestellter(newUser);
