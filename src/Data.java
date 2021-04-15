@@ -7,9 +7,9 @@ public class Data {
 	private ArrayList<Arbeitsgruppe> Arbeitsgruppe = new ArrayList<Arbeitsgruppe>();
 	
 	private Data() {
-		Arbeitsgruppe.add(new Arbeitsgruppe ( "Labor", "Zuständig für die Erforschung neuer Produkte und Aufdecken Sicherheitsrisiken alter Produkten."));
-		Arbeitsgruppe.add(new Arbeitsgruppe ( "Produktion", "Zuständig für die Produktion der ware"));
-		Arbeitsgruppe.add(new Arbeitsgruppe ( "Liferanten", "Zuständig für die Auslieferung"));
+		Arbeitsgruppe.add(new Arbeitsgruppe ( "Labor", "Zustï¿½ndig fï¿½r die Erforschung neuer Produkte und Aufdecken Sicherheitsrisiken alter Produkten."));
+		Arbeitsgruppe.add(new Arbeitsgruppe ( "Produktion", "Zustï¿½ndig fï¿½r die Produktion der ware"));
+		Arbeitsgruppe.add(new Arbeitsgruppe ( "Liferanten", "Zustï¿½ndig fï¿½r die Auslieferung"));
 	}
 
 
@@ -20,7 +20,12 @@ public class Data {
 		return instance;
 	}
 
+	public void remove(Angestellter A) {
+		userlist.remove(A);
+	}
+
 	
+
 	public void InsertPerson(Angestellter A) {
 		userlist.add(A);
 	}
