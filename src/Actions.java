@@ -1,27 +1,19 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Actions {
 
-	public static boolean AddAngestellter(Angestellter A) {
-		if (A.getExternal() == false) {
-			Angestellter User = new Externer(null, null, null, null, null, 0, null, null, null, null);
-			User = A;
-			Data.getInstance().InsertPerson(User);
-			return(true);
-		} else {
-			Angestellter User = new Mitarbeiter(null, null, null, null, null, 0, null, null, null, null, null, 0);
-			User = A;
-			Data.getInstance().InsertPerson(User);
-			return(true);
-		}
+	public void AddAngestellter(Angestellter A) {
+		Data.getInstance().InsertPerson(A);
 	}
 
-	public static ArrayList<Arbeitsgruppe> getGroups() {
+	public ArrayList<Arbeitsgruppe> getGroups() {
 		return Data.getInstance().getGroups();
 
 	}
 
-	public static ArrayList<Angestellter> getAllUsers() {
+	public ArrayList<Angestellter> getAllUsers() {
 		return Data.getInstance().getAllUsers();
 	}
 
@@ -33,8 +25,15 @@ public class Actions {
 		Data.getInstance().update(old_A, up_A);
 	}
 
-	public static void search(String Suche) {
-
+	public List<Angestellter> search(String suche) {
+		ArrayList<Angestellter> Userlist = Data.getInstance().getAllUsers();
+		List<Angestellter> filtertusers = Userlist.stream().filter(a -> suche.equals(a.getArbeitsgruppe().getName()) 
+				|| a.getEMail().equals(suche))
+			|| (a instanceof Externer && ((Externer)a).getContractor().equals(suche)) 
+			|| (a instanceof Mitarbeiter && ((Mitarbeiter)a).getName().equals(suche)
+				|| ((Mitarbeiter)a).getName().equals(suche) 
+				|| ((Mitarbeiter)a).getPassword().equals(suche))).collect(Collectors.toList());
+		return filtertusers;
 	}
 
 	public Angestellter GetUserbyID(int ID) {
