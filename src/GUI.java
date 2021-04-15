@@ -51,13 +51,12 @@ public class GUI{
 	        }  
 	        });  
 		
-		JButton details = new JButton("Details");
-		panel.add(details);
-	    details.addActionListener(new ActionListener(){  
+		JButton edit = new JButton("Bearbeiten");
+		panel.add(edit);
+	    edit.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-		    //***********************************
-		        
-		    //***********************************	
+		    String user = Users.getSelectedRow();
+		    
 
 	        	
 	        	
@@ -84,7 +83,7 @@ public class GUI{
 		panel.add(search);
 	    search.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        Actions.search(searchtxt.getText());
+	        Angestellter ret = Actions.search(searchtxt.getText());
 	        }  
 	        });  
 		
@@ -96,11 +95,13 @@ public class GUI{
 		panel_1.add(List);
 		
 		
-//		JTable Users = new JTable(Actions.getAllUsers());
 		JTable Users = new JTable();
-		Users.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null},
+		Users.setModel(new DefaultTableModel());
+				for (Angestellter : Actions.getAllUsers()) {
+					new Object[][] {
+						{null , null, null, null},
+						{
+
 			},
 			new String[] {
 				"ID", "Name", "Vorname", "E-Mail"

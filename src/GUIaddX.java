@@ -98,6 +98,9 @@ public class GUIaddX{
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
 		
+		JComboBox<Arbeitsgruppe> workgroup = new JComboBox<Arbeitsgruppe>(new Vector(Actions.getGroups()));
+		panel_1.add(workgroup);
+		
 		JLabel Contractor = new JLabel("Anstellungsfirma");
 		Contractor.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Contractor);
@@ -105,9 +108,6 @@ public class GUIaddX{
 		JTextField contractor = new JTextField();
 		panel_1.add(contractor);
 		contractor.setColumns(10);
-		
-		JComboBox workgroup = new JComboBox(new Vector(Actions.getGroups()));
-		panel_1.add(workgroup);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);
@@ -120,7 +120,6 @@ public class GUIaddX{
 			GUI G1 = new GUI();			
 	    	}  
 	    	});  
-		
 		JLabel txt = new JLabel("Externer Mitarbeiter erstellen");
 		panel.add(txt);
 		
@@ -136,7 +135,7 @@ public class GUIaddX{
 			newUser.setWohnort(home.getText());
 		    newUser.setID(Integer.parseInt(id.getText()));
 			newUser.setGeburtsjahr(birthdate.getText());
-			newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+			newUser.setArbeitsgruppe((Arbeitsgruppe) workgroup.getSelectedItem());
 			newUser.setExternal(false);
 			newUser.setContractor(contractor.getText());
 			boolean ret = Actions.AddAngestellter(newUser);

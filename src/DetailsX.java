@@ -3,14 +3,11 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -18,13 +15,13 @@ public class DetailsX{
 	
 	private JFrame frame;
 	
-	public DetailsX(){
+	public DetailsX(Angestellter oldUser){
 		
-		initialize();
+		initialize(oldUser);
 		
 	}
 
-	private void initialize() {
+	private void initialize(Angestellter oldUser) {
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
@@ -98,6 +95,9 @@ public class DetailsX{
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
 		
+		JComboBox<Arbeitsgruppe> workgroup = new JComboBox<Arbeitsgruppe>(new Vector(Actions.getGroups()));
+		panel_1.add(workgroup);
+		
 		JLabel Contractor = new JLabel("Anstellungsfirma");
 		Contractor.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Contractor);
@@ -105,9 +105,6 @@ public class DetailsX{
 		JTextField contractor = new JTextField();
 		panel_1.add(contractor);
 		contractor.setColumns(10);
-		
-		JComboBox workgroup = new JComboBox(new Vector(Actions.getGroups()));
-		panel_1.add(workgroup);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);
@@ -120,11 +117,10 @@ public class DetailsX{
 			GUI G1 = new GUI();			
 	    	}  
 	    	});  
-		
-		JLabel txt = new JLabel("Externer Mitarbeiter erstellen");
+		JLabel txt = new JLabel("Externer Mitarbeiter bearbeitungen speichern");
 		panel.add(txt);
 		
-		JButton next = new JButton("Fertig");
+		JButton next = new JButton("Speichern");
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
@@ -136,13 +132,10 @@ public class DetailsX{
 			newUser.setWohnort(home.getText());
 		    newUser.setID(Integer.parseInt(id.getText()));
 			newUser.setGeburtsjahr(birthdate.getText());
-			newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+			newUser.setArbeitsgruppe((Arbeitsgruppe) workgroup.getSelectedItem());
 			newUser.setExternal(false);
 			newUser.setContractor(contractor.getText());
-			boolean ret = Actions.AddAngestellter(newUser);
-			if (ret == false) {
-			Error1 Error = new Error1();
-			}
+		    Actions.UpdateUser(oldUser, updatedUser);
 	    	frame.dispose();
 			GUI G1 = new GUI();	
 	    	}  

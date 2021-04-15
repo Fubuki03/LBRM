@@ -152,9 +152,10 @@ public class GUIaddM{
 		    newUser.setEMail(email.getText());
 		    newUser.setTelefon(phone.getText());
 		    newUser.setWohnort(home.getText());
-		    newUser.setID(Integer.parseInt(ID.getText()));
+		    newUser.setID(Integer.parseInt(id.getText()));
 		    newUser.setGeburtsjahr(birthdate.getText());
-		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+		    System.out.println(workgroup.getSelectedItem());
+		    newUser.setArbeitsgruppe((Arbeitsgruppe)workgroup.getSelectedItem());
 		    newUser.setExternal(false);
 		    newUser.setUsername(username.getText());
 		    newUser.setPassword(password.getText());

@@ -9,6 +9,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -16,13 +17,13 @@ public class DetailsM{
 	
 	private JFrame frame;
 	
-	public DetailsM(){
+	public DetailsM(Angestellter oldUser){
 		
-		initialize();
+		initialize(oldUser);
 		
 	}
 
-	private void initialize() {
+	private void initialize(Angestellter oldUser) {
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
@@ -48,7 +49,7 @@ public class DetailsM{
 		Password.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Password);
 		
-		JTextField password = new JTextField();
+		JPasswordField password = new JPasswordField();
 		panel_1.add(password);
 		password.setColumns(10);
 		
@@ -115,13 +116,13 @@ public class DetailsM{
 		panel_1.add(vnumber);
 		vnumber.setColumns(10);
 		
-		JLabel Mnumber = new JLabel("Mitarbeiternummer");
-		Mnumber.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(Mnumber);
+		JLabel ID = new JLabel("ID");
+		ID.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(ID);
 		
-		JTextField mnumber = new JTextField();
-		panel_1.add(mnumber);
-		mnumber.setColumns(10);
+		JTextField id = new JTextField(6);
+		panel_1.add(id);
+		id.setColumns(1);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);
@@ -133,39 +134,32 @@ public class DetailsM{
 			frame.dispose();
 			GUI G1 = new GUI();		
 	    	}  
-	    	});
-	    
-	    JButton safe = new JButton("Speichern");
-	    cancel.addActionListener(new ActionListener(){  
-	    	public void actionPerformed(ActionEvent e){  
-			frame.dispose();
-			GUI G1 = new GUI();		
-	    	}  
-	    	});
+	    	});  
 		
-		JLabel txt = new JLabel("Mitarbeiter erstellen");
+		JLabel txt = new JLabel("Mitarbeiter bearbeitungen speichern");
 		panel.add(txt);
 		
-		JButton next = new JButton("Fertig");
+		JButton next = new JButton("Speichern");
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){
 	        public void actionPerformed(ActionEvent e){  
-	        Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, 0, null, null, null, null, null, 0);
-		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
-		    newUser.setEMail(email.getText());
-		    newUser.setExternal(false);
-		    newUser.setGeburtsjahr(birthdate.getText());
-		    newUser.setName(name.getText());
-		    newUser.setTelefon(phone.getText());
-		    newUser.setVorname(vname.getText());
-		    newUser.setWohnort(home.getText());
-		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
-		    newUser.setMitarbnr(Integer.parseInt(mnumber.getText()));
-		    newUser.setPassword(password.getText());
-		    newUser.setUsername(username.getText());
+	        Mitarbeiter updatedUser = new Mitarbeiter(null, null, null, null, null, 0, null, null, null, null, null, 0);
+	        updatedUser.setName(name.getText());
+	        updatedUser.setVorname(vname.getText());
+	        updatedUser.setEMail(email.getText());
+	        updatedUser.setTelefon(phone.getText());
+	        updatedUser.setWohnort(home.getText());
+	        updatedUser.setID(Integer.parseInt(id.getText()));
+	        updatedUser.setGeburtsjahr(birthdate.getText());
+	        updatedUser.setArbeitsgruppe((Arbeitsgruppe)workgroup.getSelectedItem());
+	        updatedUser.setExternal(false);
+		    updatedUser.setUsername(username.getText());
+		    updatedUser.setPassword(password.getText());
+		    updatedUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
+		    Actions.UpdateUser(oldUser, updatedUser);
 			frame.dispose();
-			GUI G1 = new GUI();			
-	        }  
+			GUI G1 = new GUI();
+			}  
 	        });  
 	    
 	    frame.setVisible(true);
