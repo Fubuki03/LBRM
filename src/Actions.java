@@ -26,10 +26,15 @@ public class Actions {
 	}
 
 	public void DeleteUser(Angestellter A) {
+		Data.getInstance().remove(A);
+	}
 
+	public void UpdateUser(Angestellter A) {
+		
 	}
 
 	public void search(String Suche) {
+
 	}
 
 	public Angestellter GetUserbyID(int ID) {
