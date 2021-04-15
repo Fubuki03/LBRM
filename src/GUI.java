@@ -65,7 +65,7 @@ public class GUI{
 	        }  
 	        }); 
 		
-		JButton delete = new JButton("Lï¿½schen");
+		JButton delete = new JButton("Löschen");
 		panel.add(delete);
 	    delete.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
