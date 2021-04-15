@@ -150,7 +150,7 @@ public class DetailsM{
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){
 	        public void actionPerformed(ActionEvent e){  
-	        Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
+	        Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, 0, null, null, null, null, null, 0);
 		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
 		    newUser.setEMail(email.getText());
 		    newUser.setExternal(false);
