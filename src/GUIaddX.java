@@ -78,7 +78,7 @@ public class GUIaddX{
 		panel_1.add(home);
 		home.setColumns(10);
 		
-		JLabel Birthdate = new JLabel("Geburtstag");
+		JLabel Birthdate = new JLabel("Geburtjahr");
 		Birthdate.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Birthdate);
 		
