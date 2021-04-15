@@ -24,7 +24,10 @@ public class Data {
 		userlist.remove(A);
 	}
 
-	
+	public void update(Angestellter old_A, Angestellter new_A) {
+		int index = userlist.indexOf(old_A);
+		userlist.set(index, new_A);
+	}
 
 	public void InsertPerson(Angestellter A) {
 		userlist.add(A);
