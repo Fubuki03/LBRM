@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.desktop.UserSessionEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -54,7 +55,9 @@ public class GUI{
 		panel.add(details);
 	    details.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        	
+		    //***********************************
+		        
+		    //***********************************	
 
 	        	
 	        	
@@ -66,8 +69,9 @@ public class GUI{
 		panel.add(delete);
 	    delete.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
+	        String user = Users.getSelectedRow();
 	        frame.dispose();    
-	        GUIremove G3 = new GUIremove();      
+	        GUIremove G3 = new GUIremove(Users.get);      
 	        }  
 	        });  
 		
@@ -80,12 +84,10 @@ public class GUI{
 		panel.add(search);
 	    search.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        	
-	        	
-	        	
-	        	
-	        	
-	        	
+	        String search = searchtxt.getText();
+	        //***********************************
+	        
+	        //***********************************
 	        }  
 	        });  
 		
