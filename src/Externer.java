@@ -1,20 +1,21 @@
 
 public class Externer extends Angestellter {
-	private int extnr;
 	
-	public Externer(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr,
-			Arbeitsgruppe Arbeitsgruppe, int extnr, Boolean External) {
-		super(name, Vorname, EMail, Telefon, Wohnort, Geburtsjahr, Arbeitsgruppe, External);
-		this.extnr = extnr;
-		
+	private String Contractor;
+	
+	public Externer(String name, String Vorname, String EMail, String Telefon, String Wohnort, int ID,
+			String Geburtsjahr, Arbeitsgruppe Arbeitsgruppe, Boolean External, String Contractor) {
+		super(name, Vorname, EMail, Telefon, Wohnort, ID, Geburtsjahr, Arbeitsgruppe, External);
+		this.Contractor = Contractor;
 	}
 
-	public int getExtnr() {
-		return extnr;
+
+	public String getExtnr() {
+		return Contractor;
 	}
 
-	public void setExtnr(int extnr) {
-		this.extnr = extnr;
+	public void setExtnr(String extnr) {
+		this.Contractor = extnr;
 	}
 		
 	

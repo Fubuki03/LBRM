@@ -6,16 +6,18 @@ public abstract class Angestellter {
 	private String EMail;
 	private String Telefon;
 	private String Wohnort;
+	private int ID;
 	private String Geburtsjahr;
 	private Arbeitsgruppe Arbeitsgruppe;
 	private Boolean External;
 
-	public Angestellter(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr, Arbeitsgruppe Arbeitsgruppe, Boolean External) {
+	public Angestellter(String name, String Vorname, String EMail, String Telefon, String Wohnort,int ID, String Geburtsjahr, Arbeitsgruppe Arbeitsgruppe, Boolean External) {
 		this.Name = name;
 		this.Vorname = Vorname;
 		this.EMail = EMail;
 		this.Telefon = Telefon;
 		this.Wohnort = Wohnort;
+		this.ID = ID;
 		this.Geburtsjahr = Geburtsjahr;
 		this.Arbeitsgruppe = Arbeitsgruppe;
 		this.External = External;
@@ -62,6 +64,14 @@ public abstract class Angestellter {
 		Wohnort = wohnort;
 	}
 
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
 	public String getGeburtsjahr() {
 		return Geburtsjahr;
 	}
@@ -74,8 +84,8 @@ public abstract class Angestellter {
 		return Arbeitsgruppe;
 	}
 
-	public void setArbeitsgruppe(Object object) {
-		Arbeitsgruppe = (Arbeitsgruppe) object;
+	public void setArbeitsgruppe(Arbeitsgruppe arbeitsgruppe) {
+		Arbeitsgruppe = arbeitsgruppe;
 	}
 
 	public Boolean getExternal() {
@@ -85,8 +95,7 @@ public abstract class Angestellter {
 	public void setExternal(Boolean external) {
 		External = external;
 	}
-	
-	
+
 	
 
 

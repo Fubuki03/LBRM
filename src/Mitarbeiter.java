@@ -3,16 +3,14 @@ public class Mitarbeiter extends Angestellter {
 
 	private String Username;
 	private String Password;
-	private int Mitarbnr;
 	private int Vertragsnr;
 
-	public Mitarbeiter(String name, String Vorname, String EMail, String Telefon, String Wohnort, String Geburtsjahr,
-			Arbeitsgruppe Arbeitsgruppe, String username, String password, int mitarbnr, int vertragsnr, Boolean External) {
-		super(name, Vorname, EMail, Telefon, Wohnort, Geburtsjahr, Arbeitsgruppe, External);
-		this.Username = username;
-		this.Password = password;
-		this.Mitarbnr = mitarbnr;
-		this.Vertragsnr = vertragsnr;
+	public Mitarbeiter(String name, String Vorname, String EMail, String Telefon, String Wohnort, int ID,
+			String Geburtsjahr, Arbeitsgruppe Arbeitsgruppe, Boolean External, String Username, String Password, int Vertragsnr) {
+		super(name, Vorname, EMail, Telefon, Wohnort, ID, Geburtsjahr, Arbeitsgruppe, External);
+		this.Username = Username;
+		this.Password = Password;
+		this.Vertragsnr = Vertragsnr; 
 	}
 
 	public String getUsername() {
@@ -31,14 +29,6 @@ public class Mitarbeiter extends Angestellter {
 		Password = password;
 	}
 
-	public int getMitarbnr() {
-		return Mitarbnr;
-	}
-
-	public void setMitarbnr(int mitarbnr) {
-		Mitarbnr = mitarbnr;
-	}
-
 	public int getVertragsnr() {
 		return Vertragsnr;
 	}
@@ -46,5 +36,7 @@ public class Mitarbeiter extends Angestellter {
 	public void setVertragsnr(int vertragsnr) {
 		Vertragsnr = vertragsnr;
 	}
+	
+	
 
 }
