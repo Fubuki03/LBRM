@@ -17,7 +17,7 @@ public class GUIremove{
 	
 	public JFrame frame;
 	
-	public GUIremove(){
+	public GUIremove(String User){
 		
 		initialize();
 		
