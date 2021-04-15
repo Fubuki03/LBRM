@@ -1,3 +1,4 @@
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -14,11 +15,11 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIaddX{
+public class DetailsM{
 	
 	private JFrame frame;
 	
-	public GUIaddX(){
+	public DetailsM(){
 		
 		initialize();
 		
@@ -37,6 +38,29 @@ public class GUIaddX{
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(new GridLayout(11, 2, 0, 0));
+		
+		JLabel Username = new JLabel("Benutzernamen");
+		Username.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Username);
+		
+		JTextField username = new JTextField();
+		panel_1.add(username);
+		username.setColumns(10);
+		
+		JLabel Password = new JLabel("Passwort");
+		Password.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Password);
+		
+		JTextField password = new JTextField();
+		panel_1.add(password);
+		password.setColumns(10);
+		
+		JLabel Workgroup = new JLabel("Arbeitsgruppe");
+		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Workgroup);
+		
+		JComboBox workgroup = new JComboBox(new Vector(Actions.getGroups()));
+		panel_1.add(workgroup);
 		
 		JLabel Name = new JLabel("Name");
 		Name.setHorizontalAlignment(SwingConstants.CENTER);
@@ -94,12 +118,13 @@ public class GUIaddX{
 		panel_1.add(vnumber);
 		vnumber.setColumns(10);
 		
-		JLabel Workgroup = new JLabel("Arbeitsgruppe");
-		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(Workgroup);
+		JLabel Mnumber = new JLabel("Mitarbeiternummer");
+		Mnumber.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Mnumber);
 		
-		JComboBox workgroup = new JComboBox(new Vector(Actions.getGroups()));
-		panel_1.add(workgroup);
+		JTextField mnumber = new JTextField();
+		panel_1.add(mnumber);
+		mnumber.setColumns(10);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);
@@ -107,33 +132,36 @@ public class GUIaddX{
 		JButton cancel = new JButton("Abbrechen");
 		panel.add(cancel);
 	    cancel.addActionListener(new ActionListener(){  
-	    	public void actionPerformed(ActionEvent e){  	
+	    	public void actionPerformed(ActionEvent e){  
 			frame.dispose();
-			GUI G1 = new GUI();			
+			GUI G1 = new GUI();		
 	    	}  
 	    	});  
 		
-		JLabel txt = new JLabel("Externer Mitarbeiter erstellen");
+		JLabel txt = new JLabel("Mitarbeiter erstellen");
 		panel.add(txt);
 		
 		JButton next = new JButton("Fertig");
 		panel.add(next);
-	    next.addActionListener(new ActionListener(){  
-	    	public void actionPerformed(ActionEvent e){  
-		    Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
-			newUser.setArbeitsgruppe(workgroup.getSelectedItem());
-			newUser.setEMail(email.getText());
-			newUser.setExternal(false);
-			newUser.setGeburtsjahr(birthdate.getText());
-			newUser.setName(name.getText());
-			newUser.setTelefon(phone.getText());
-			newUser.setVorname(vname.getText());
-			newUser.setWohnort(home.getText());
-			Actions.AddAngestellter(newUser);
-	    	frame.dispose();
-			GUI G1 = new GUI();	
-	    	}  
-	    	});  
+	    next.addActionListener(new ActionListener(){
+	        public void actionPerformed(ActionEvent e){  
+	        Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
+		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+		    newUser.setEMail(email.getText());
+		    newUser.setExternal(false);
+		    newUser.setGeburtsjahr(birthdate.getText());
+		    newUser.setName(name.getText());
+		    newUser.setTelefon(phone.getText());
+		    newUser.setVorname(vname.getText());
+		    newUser.setWohnort(home.getText());
+		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
+		    newUser.setMitarbnr(Integer.parseInt(mnumber.getText()));
+		    newUser.setPassword(password.getText());
+		    newUser.setUsername(username.getText());
+			frame.dispose();
+			GUI G1 = new GUI();			
+	        }  
+	        });  
 	    
 	    frame.setVisible(true);
 	}

@@ -14,11 +14,11 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class GUIaddX{
+public class DetailsX{
 	
 	private JFrame frame;
 	
-	public GUIaddX(){
+	public DetailsX(){
 		
 		initialize();
 		
@@ -129,7 +129,6 @@ public class GUIaddX{
 			newUser.setTelefon(phone.getText());
 			newUser.setVorname(vname.getText());
 			newUser.setWohnort(home.getText());
-			Actions.AddAngestellter(newUser);
 	    	frame.dispose();
 			GUI G1 = new GUI();	
 	    	}  
