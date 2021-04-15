@@ -51,13 +51,12 @@ public class GUI{
 	        }  
 	        });  
 		
-		JButton details = new JButton("Details");
-		panel.add(details);
-	    details.addActionListener(new ActionListener(){  
+		JButton edit = new JButton("Bearteiben");
+		panel.add(edit);
+	    edit.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-		    //***********************************
-		        
-		    //***********************************	
+		    String user = Users.getSelectedRow();
+		     
 
 	        	
 	        	
@@ -84,7 +83,7 @@ public class GUI{
 		panel.add(search);
 	    search.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        Actions.search(searchtxt.getText());
+	        Users ret = Actions.search(searchtxt.getText());
 	        }  
 	        });  
 		
