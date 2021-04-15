@@ -85,9 +85,7 @@ public class GUI{
 	    search.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
 	        String search = searchtxt.getText();
-	        //***********************************
 	        
-	        //***********************************
 	        }  
 	        });  
 		
