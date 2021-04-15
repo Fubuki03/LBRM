@@ -86,17 +86,25 @@ public class GUIaddX{
 		panel_1.add(birthdate);
 		birthdate.setColumns(10);
 		
-		JLabel Vnumber = new JLabel("Vertragsnummer");
-		Vnumber.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(Vnumber);
+		JLabel ID = new JLabel("Benutzer ID");
+		ID.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(ID);
 		
-		JTextField vnumber = new JTextField();
-		panel_1.add(vnumber);
-		vnumber.setColumns(10);
+		JTextField id = new JTextField(6);
+		panel_1.add(id);
+		id.setColumns(10);
 		
 		JLabel Workgroup = new JLabel("Arbeitsgruppe");
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Workgroup);
+		
+		JLabel Contractor = new JLabel("Anstellungsfirma");
+		Contractor.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(Contractor);
+		
+		JTextField contractor = new JTextField();
+		panel_1.add(contractor);
+		contractor.setColumns(10);
 		
 		JComboBox workgroup = new JComboBox(new Vector(Actions.getGroups()));
 		panel_1.add(workgroup);
@@ -120,15 +128,17 @@ public class GUIaddX{
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
-		    Mitarbeiter newUser = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
-			newUser.setArbeitsgruppe(workgroup.getSelectedItem());
-			newUser.setEMail(email.getText());
-			newUser.setExternal(false);
-			newUser.setGeburtsjahr(birthdate.getText());
+		    Externer newUser = new Externer(null, null, null, null, null, 0, null, null, null, null);
 			newUser.setName(name.getText());
-			newUser.setTelefon(phone.getText());
 			newUser.setVorname(vname.getText());
+			newUser.setEMail(email.getText());
+			newUser.setTelefon(phone.getText());
 			newUser.setWohnort(home.getText());
+		    newUser.setID(Integer.parseInt(id.getText()));
+			newUser.setGeburtsjahr(birthdate.getText());
+			newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+			newUser.setExternal(false);
+			newUser.setContractor(contractor.getText());
 			boolean ret = Actions.AddAngestellter(newUser);
 			if (ret == false) {
 			Error1 Error = new Error1();
