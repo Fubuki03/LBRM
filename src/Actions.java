@@ -33,7 +33,7 @@ public class Actions {
 		
 	}
 
-	public void search(String Suche) {
+	public static void search(String Suche) {
 
 	}
 
