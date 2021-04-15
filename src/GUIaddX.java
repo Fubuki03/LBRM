@@ -129,7 +129,10 @@ public class GUIaddX{
 			newUser.setTelefon(phone.getText());
 			newUser.setVorname(vname.getText());
 			newUser.setWohnort(home.getText());
-			Actions.AddAngestellter(newUser);
+			boolean ret = Actions.AddAngestellter(newUser);
+			if (ret == false) {
+			Error1 Error = new Error1();
+			}
 	    	frame.dispose();
 			GUI G1 = new GUI();	
 	    	}  

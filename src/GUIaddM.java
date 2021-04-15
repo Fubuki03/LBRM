@@ -159,7 +159,11 @@ public class GUIaddM{
 		    newUser.setPassword(password.getText());
 		    newUser.setUsername(username.getText());
 			frame.dispose();
-			GUI G1 = new GUI();			
+			GUI G1 = new GUI();
+			boolean ret = Actions.AddAngestellter(newUser);
+			if (ret == false) {
+			Error1 Error = new Error1();
+			}
 	        }  
 	        });  
 	    

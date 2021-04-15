@@ -4,14 +4,11 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -136,7 +133,15 @@ public class DetailsM{
 			frame.dispose();
 			GUI G1 = new GUI();		
 	    	}  
-	    	});  
+	    	});
+	    
+	    JButton safe = new JButton("Speichern");
+	    cancel.addActionListener(new ActionListener(){  
+	    	public void actionPerformed(ActionEvent e){  
+			frame.dispose();
+			GUI G1 = new GUI();		
+	    	}  
+	    	});
 		
 		JLabel txt = new JLabel("Mitarbeiter erstellen");
 		panel.add(txt);
