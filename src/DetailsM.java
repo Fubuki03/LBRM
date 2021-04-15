@@ -136,7 +136,15 @@ public class DetailsM{
 			frame.dispose();
 			GUI G1 = new GUI();		
 	    	}  
-	    	});  
+	    	});
+	    
+	    JButton safe = new JButton("Speichern")
+	    cancel.addActionListener(new ActionListener(){  
+	    	public void actionPerformed(ActionEvent e){  
+			frame.dispose();
+			GUI G1 = new GUI();		
+	    	}  
+	    	});
 		
 		JLabel txt = new JLabel("Mitarbeiter erstellen");
 		panel.add(txt);
