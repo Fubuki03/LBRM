@@ -10,12 +10,12 @@ public class Externer extends Angestellter {
 	}
 
 
-	public String getExtnr() {
+	public String getContractor() {
 		return Contractor;
 	}
 
-	public void setExtnr(String extnr) {
-		this.Contractor = extnr;
+	public void setContractor(String Contractor) {
+		this.Contractor = Contractor;
 	}
 		
 	

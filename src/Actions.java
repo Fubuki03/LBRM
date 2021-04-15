@@ -32,7 +32,15 @@ public class Actions {
 	public void search(String Suche) {
 	}
 
-	public void GetUserbyID(int ID) {
+	public Angestellter GetUserbyID(int ID) {
+		ArrayList<Angestellter> Userlist = Data.getInstance().getAllUsers();
+		for (Angestellter element : Userlist){
+			if (element.getID() == ID){
+				  return element;
+			}
+		}
+		Angestellter A = new Mitarbeiter(null, null, null, null, null, ID, null, null, null, null, null, ID);
+		return A;
 		
 	}
 
