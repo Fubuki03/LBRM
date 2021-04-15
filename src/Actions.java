@@ -29,8 +29,8 @@ public class Actions {
 		Data.getInstance().remove(A);
 	}
 
-	public void UpdateUser(Angestellter A) {
-		
+	public void UpdateUser(Angestellter old_A, Angestellter up_A) {
+		Data.getInstance().update(old_A, up_A);
 	}
 
 	public static void search(String Suche) {
@@ -49,11 +49,4 @@ public class Actions {
 		
 	}
 
-	/*
-	 * public Angestellter FindUser(Angestellter A) { for (Angestellter element :
-	 * Data.getInstance().getAllUsers()) { if (element.contains("Java")) { return
-	 * element; } }
-	 * 
-	 * }
-	 */
 }
