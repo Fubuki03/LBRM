@@ -155,7 +155,7 @@ public class GUIaddM{
 		    newUser.setID(Integer.parseInt(id.getText()));
 		    newUser.setGeburtsjahr(birthdate.getText());
 		    System.out.println(workgroup.getSelectedItem());
-		    newUser.setArbeitsgruppe(workgroup.getSelectedItem());
+		    newUser.setArbeitsgruppe((Arbeitsgruppe)workgroup.getSelectedItem());
 		    newUser.setExternal(false);
 		    newUser.setUsername(username.getText());
 		    newUser.setPassword(password.getText());
