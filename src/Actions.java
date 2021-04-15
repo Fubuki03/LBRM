@@ -2,15 +2,17 @@ import java.util.ArrayList;
 
 public class Actions {
 
-	public void AddAngestellter(Angestellter A) {
+	public static String AddAngestellter(Angestellter A) {
 		if (A.getExternal() == false) {
 			Angestellter User = new Externer(null, null, null, null, null, null, null, 0, null);
 			User = A;
 			Data.getInstance().InsertPerson(User);
+			return("Succes");
 		} else {
 			Angestellter User = new Mitarbeiter(null, null, null, null, null, null, null, null, null, 0, 0, null);
 			User = A;
 			Data.getInstance().InsertPerson(User);
+			return("Succes");
 		}
 	}
 
@@ -25,6 +27,13 @@ public class Actions {
 
 	public void DeleteUser(Angestellter A) {
 
+	}
+
+	public void search(String Suche) {
+	}
+
+	public void GetUserbyID(int ID) {
+		
 	}
 
 	/*
