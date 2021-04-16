@@ -24,6 +24,8 @@ public class DetailsM{
 	}
 
 	private void initialize(Angestellter oldUser) {
+
+		Actions Actions = new Actions();
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
