@@ -1,5 +1,3 @@
-import javax.swing.Action;
-
 public class Test {
 public static void main(String[] args) {
     Actions Actions = new Actions();
