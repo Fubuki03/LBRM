@@ -27,7 +27,7 @@ public class Actions {
 
 	public List<Angestellter> search(String suche) {
 		ArrayList<Angestellter> Userlist = Data.getInstance().getAllUsers();
-		List<Angestellter> filtertusers = Userlist.stream().filter(a -> suche.equals(a.getArbeitsgruppe().getName()) 
+		List<Angestellter> filtertusers = Userlist.stream().filter(a -> (suche.equals(a.getArbeitsgruppe().getName())
 				|| a.getEMail().equals(suche))
 			|| (a instanceof Externer && ((Externer)a).getContractor().equals(suche)) 
 			|| (a instanceof Mitarbeiter && ((Mitarbeiter)a).getName().equals(suche)
