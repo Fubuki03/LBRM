@@ -28,7 +28,13 @@ public class Actions {
 	public List<Angestellter> search(String suche) {
 		ArrayList<Angestellter> Userlist = Data.getInstance().getAllUsers();
 		List<Angestellter> filtertusers = Userlist.stream().filter(a -> (suche.equals(a.getArbeitsgruppe().getName())
-				|| a.getEMail().equals(suche))
+				|| suche.equals(a.getEMail())
+				|| suche.equals(a.getGeburtsjahr())
+				|| suche.equals(Integer.toString(a.getID()))
+				|| suche.equals(a.getName())
+				|| suche.equals(a.getTelefon())
+				|| suche.equals(a.getVorname())
+				|| suche.equals(a.getWohnort()))
 			|| (a instanceof Externer && ((Externer)a).getContractor().equals(suche)) 
 			|| (a instanceof Mitarbeiter && ((Mitarbeiter)a).getName().equals(suche)
 				|| ((Mitarbeiter)a).getName().equals(suche) 
@@ -43,7 +49,7 @@ public class Actions {
 				  return element;
 			}
 		}
-		Angestellter A = new Mitarbeiter(null, null, null, null, null, ID, null, null, null, null, null, ID);
+		Angestellter A = new Mitarbeiter(null, null, null, null, null, 0, null, null, null, null, null, 0);
 		return A;
 		
 	}
