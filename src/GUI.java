@@ -5,7 +5,7 @@ import java.awt.GridLayout;
 import java.awt.desktop.UserSessionEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,17 +18,29 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+
 public class GUI{
-	
 	private JFrame frame;
 	
+	
 	public GUI(){
-		
 		initialize();
 		
 	}
 
 	private void initialize() {
+		
+		
+		
+    	Actions Actions = new Actions();
+    	
+    	DefaultTableModel model = new DefaultTableModel(); 
+		JTable Users = new JTable(model); 
+
+		model.addColumn("ID"); 
+		model.addColumn("Name");
+		model.addColumn("Vorname");
+		model.addColumn("E-Mail"); 
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
@@ -55,22 +67,34 @@ public class GUI{
 		panel.add(edit);
 	    edit.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-		    String user = Users.getSelectedRow();
+	        
+	        int column = 0;
+		    int row = Users.getSelectedRow();
+		    String value = Users.getModel().getValueAt(row, column).toString();
 		    
-
-	        	
+		    Angestellter A = Actions.GetUserbyID(Integer.parseInt(value));
+		    
+	        System.out.println(A.getClass().getName());
+		    if ( "Externer" == A.getClass().getName()) {
+		    	DetailsX G9 = new DetailsX(A);
+		    }else {
+		    	DetailsM G10 = new DetailsM(A);
+		    }
 	        	
 	        	
 	        }  
-	        }); 
-		
+	        });
+
 		JButton delete = new JButton("Löschen");
 		panel.add(delete);
 	    delete.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        String user = Users.getSelectedRow();
-	        frame.dispose();    
-	        GUIremove G3 = new GUIremove(Users.get);      
+	        frame.dispose();
+	        int column = 0;
+	        int row = Users.getSelectedRow();
+	        String value = Users.getModel().getValueAt(row, column).toString();
+	        
+	        GUIremove G3 = new GUIremove(Integer.parseInt(value));      
 	        }  
 	        });  
 		
@@ -83,40 +107,28 @@ public class GUI{
 		panel.add(search);
 	    search.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        Angestellter ret = Actions.search(searchtxt.getText());
+	        List<Angestellter> ret = Actions.search(searchtxt.getText());
+	        frame.dispose();    
+	        GUISearch G7 = new GUISearch(ret);
 	        }  
 	        });  
 		
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
-		
-		JSplitPane List = new JSplitPane();
-		List.setOrientation(JSplitPane.VERTICAL_SPLIT);
-		panel_1.add(List);
-		
-		
-		JTable Users = new JTable();
-		Users.setModel(new DefaultTableModel());
-				for (Angestellter : Actions.getAllUsers()) {
-					new Object[][] {
-						{null , null, null, null},
-						{
 
-			},
-			new String[] {
-				"ID", "Name", "Vorname", "E-Mail"
-			}
-		));
-		Users.getColumnModel().getColumn(0).setPreferredWidth(150);
-		Users.getColumnModel().getColumn(1).setPreferredWidth(150);
-		Users.getColumnModel().getColumn(2).setPreferredWidth(150);
-		Users.getColumnModel().getColumn(3).setPreferredWidth(200);
-		List.setRightComponent(Users);
+		model.addRow(new Object[]{"ID", "Name", "Vorname", "E-Mail"});
+		for (Angestellter A : Actions.getAllUsers()){
+			model.addRow(new Object[]{String.valueOf(A.getID()), A.getName(),  A.getVorname(), A.getEMail()});
+		} 
 		
-		JLabel ID = new JLabel("ID                                              Name                                         Vorname                                    E-Mail");
-		List.setLeftComponent(ID);
+		
+		
+		Actions.getAllUsers().size();
+		
+		panel_1.add(Users, BorderLayout.CENTER);
+		
+
 		
 		frame.setVisible(true);
-		
-	}
+ }
 }
