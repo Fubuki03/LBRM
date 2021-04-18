@@ -16,8 +16,12 @@ import javax.swing.SwingConstants;
 public class GUIremove{
 	
 	public JFrame frame;
+	private Angestellter A;
+	Actions Actions = new Actions();
 	
-	public GUIremove(String User){
+	public GUIremove(int User){
+		
+		this.A = Actions.GetUserbyID(User);
 		
 		initialize();
 		
@@ -33,7 +37,7 @@ public class GUIremove{
 		Titel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(Titel, BorderLayout.NORTH);
 		
-		JLabel Abfrage = new JLabel("Wollen Sie den Benutzer (xy) wirklich löschen?\n\n");
+		JLabel Abfrage = new JLabel("Wollen Sie den Benutze "  + A.getVorname()+ " " + A.getName() + " wirklich löschen?\n\n");
 		Abfrage.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(Abfrage, BorderLayout.CENTER);
 		
@@ -44,7 +48,7 @@ public class GUIremove{
 		splitPane.setRightComponent(delete);
 	    delete.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){
-	        	
+	        	Actions.DeleteUser(A);	
 	        	
 		    frame.dispose();
 			GUI G1 = new GUI();	
@@ -63,3 +67,5 @@ public class GUIremove{
 		
 	}
 }
+
+
