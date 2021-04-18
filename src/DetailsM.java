@@ -16,14 +16,15 @@ import javax.swing.SwingConstants;
 public class DetailsM{
 	
 	private JFrame frame;
+	private Angestellter oldUser;
 	
 	public DetailsM(Angestellter oldUser){
-		
-		initialize(oldUser);
+		this.oldUser = oldUser;
+		initialize();
 		
 	}
 
-	private void initialize(Angestellter oldUser) {
+	private void initialize() {
 
 		Actions Actions = new Actions();
 		
@@ -43,17 +44,10 @@ public class DetailsM{
 		Username.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Username);
 		
-		JTextField username = new JTextField();
+		JTextField username = new JTextField(((Mitarbeiter)oldUser).getUsername());
 		panel_1.add(username);
 		username.setColumns(10);
 		
-		JLabel Password = new JLabel("Passwort");
-		Password.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(Password);
-		
-		JPasswordField password = new JPasswordField();
-		panel_1.add(password);
-		password.setColumns(10);
 		
 		JLabel Workgroup = new JLabel("Arbeitsgruppe");
 		Workgroup.setHorizontalAlignment(SwingConstants.CENTER);
@@ -66,7 +60,7 @@ public class DetailsM{
 		Name.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Name);
 		
-		JTextField name = new JTextField();
+		JTextField name = new JTextField(((Mitarbeiter)oldUser).getName());
 		panel_1.add(name);
 		name.setColumns(10);
 		
@@ -74,7 +68,7 @@ public class DetailsM{
 		Vname.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Vname);
 		
-		JTextField vname = new JTextField();
+		JTextField vname = new JTextField(((Mitarbeiter)oldUser).getVorname());
 		panel_1.add(vname);
 		vname.setColumns(10);
 		
@@ -82,7 +76,7 @@ public class DetailsM{
 		Email.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Email);
 		
-		JTextField email = new JTextField();
+		JTextField email = new JTextField(((Mitarbeiter)oldUser).getEMail());
 		panel_1.add(email);
 		email.setColumns(10);
 		
@@ -90,7 +84,7 @@ public class DetailsM{
 		Phone.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Phone);
 		
-		JTextField phone = new JTextField();
+		JTextField phone = new JTextField(((Mitarbeiter)oldUser).getTelefon());
 		panel_1.add(phone);
 		phone.setColumns(10);
 		
@@ -98,7 +92,7 @@ public class DetailsM{
 		Home.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Home);
 		
-		JTextField home = new JTextField();
+		JTextField home = new JTextField(((Mitarbeiter)oldUser).getWohnort());
 		panel_1.add(home);
 		home.setColumns(10);
 		
@@ -106,7 +100,7 @@ public class DetailsM{
 		Birthdate.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Birthdate);
 		
-		JTextField birthdate = new JTextField();
+		JTextField birthdate = new JTextField(((Mitarbeiter)oldUser).getGeburtsjahr());
 		panel_1.add(birthdate);
 		birthdate.setColumns(10);
 		
@@ -114,7 +108,8 @@ public class DetailsM{
 		Vnumber.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Vnumber);
 		
-		JTextField vnumber = new JTextField();
+		JTextField vnumber = new JTextField(String.valueOf(((Mitarbeiter)oldUser).getVertragsnr()));
+		System.out.println(((Mitarbeiter)oldUser).getVertragsnr()	);
 		panel_1.add(vnumber);
 		vnumber.setColumns(10);
 		
@@ -122,7 +117,7 @@ public class DetailsM{
 		ID.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(ID);
 		
-		JTextField id = new JTextField(6);
+		JTextField id = new JTextField(String.valueOf(((Mitarbeiter)oldUser).getID()));
 		panel_1.add(id);
 		id.setColumns(1);
 		
@@ -156,7 +151,6 @@ public class DetailsM{
 	        updatedUser.setArbeitsgruppe((Arbeitsgruppe)workgroup.getSelectedItem());
 	        updatedUser.setExternal(false);
 		    updatedUser.setUsername(username.getText());
-		    updatedUser.setPassword(password.getText());
 		    updatedUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
 		    Actions.UpdateUser(oldUser, updatedUser);
 			frame.dispose();
