@@ -14,14 +14,17 @@ import javax.swing.SwingConstants;
 public class DetailsX{
 	
 	private JFrame frame;
+	private Angestellter oldUser;
 	
 	public DetailsX(Angestellter oldUser){
-		
-		initialize(oldUser);
+		this.oldUser = oldUser;
+		initialize();
 		
 	}
 
-	private void initialize(Angestellter oldUser) {
+	private void initialize() {
+		
+		Actions Actions = new Actions();
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
@@ -39,7 +42,7 @@ public class DetailsX{
 		Name.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Name);
 		
-		JTextField name = new JTextField();
+		JTextField name = new JTextField(((Externer)oldUser).getName());
 		panel_1.add(name);
 		name.setColumns(10);
 		
@@ -47,7 +50,7 @@ public class DetailsX{
 		Vname.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Vname);
 		
-		JTextField vname = new JTextField();
+		JTextField vname = new JTextField(((Externer)oldUser).getVorname());
 		panel_1.add(vname);
 		vname.setColumns(10);
 		
@@ -55,7 +58,7 @@ public class DetailsX{
 		Email.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Email);
 		
-		JTextField email = new JTextField();
+		JTextField email = new JTextField(((Externer)oldUser).getEMail());
 		panel_1.add(email);
 		email.setColumns(10);
 		
@@ -63,7 +66,7 @@ public class DetailsX{
 		Phone.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Phone);
 		
-		JTextField phone = new JTextField();
+		JTextField phone = new JTextField(((Externer)oldUser).getTelefon());
 		panel_1.add(phone);
 		phone.setColumns(10);
 		
@@ -71,7 +74,7 @@ public class DetailsX{
 		Home.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Home);
 		
-		JTextField home = new JTextField();
+		JTextField home = new JTextField(((Externer)oldUser).getWohnort());
 		panel_1.add(home);
 		home.setColumns(10);
 		
@@ -79,7 +82,7 @@ public class DetailsX{
 		Birthdate.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Birthdate);
 		
-		JTextField birthdate = new JTextField();
+		JTextField birthdate = new JTextField(((Externer)oldUser).getGeburtsjahr());
 		panel_1.add(birthdate);
 		birthdate.setColumns(10);
 		
@@ -87,7 +90,7 @@ public class DetailsX{
 		ID.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(ID);
 		
-		JTextField id = new JTextField(6);
+		JTextField id = new JTextField(String.valueOf(((Externer)oldUser).getID()));
 		panel_1.add(id);
 		id.setColumns(10);
 		
@@ -102,7 +105,7 @@ public class DetailsX{
 		Contractor.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(Contractor);
 		
-		JTextField contractor = new JTextField();
+		JTextField contractor = new JTextField(((Externer)oldUser).getContractor());
 		panel_1.add(contractor);
 		contractor.setColumns(10);
 		
@@ -124,17 +127,17 @@ public class DetailsX{
 		panel.add(next);
 	    next.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
-		    Externer newUser = new Externer(null, null, null, null, null, 0, null, null, null, null);
-			newUser.setName(name.getText());
-			newUser.setVorname(vname.getText());
-			newUser.setEMail(email.getText());
-			newUser.setTelefon(phone.getText());
-			newUser.setWohnort(home.getText());
-		    newUser.setID(Integer.parseInt(id.getText()));
-			newUser.setGeburtsjahr(birthdate.getText());
-			newUser.setArbeitsgruppe((Arbeitsgruppe) workgroup.getSelectedItem());
-			newUser.setExternal(false);
-			newUser.setContractor(contractor.getText());
+		    Externer updatedUser = new Externer(null, null, null, null, null, 0, null, null, null, null);
+		    updatedUser.setName(name.getText());
+		    updatedUser.setVorname(vname.getText());
+			updatedUser.setEMail(email.getText());
+			updatedUser.setTelefon(phone.getText());
+			updatedUser.setWohnort(home.getText());
+			updatedUser.setID(Integer.parseInt(id.getText()));
+			updatedUser.setGeburtsjahr(birthdate.getText());
+			updatedUser.setArbeitsgruppe((Arbeitsgruppe) workgroup.getSelectedItem());
+			updatedUser.setExternal(false);
+			updatedUser.setContractor(contractor.getText());
 		    Actions.UpdateUser(oldUser, updatedUser);
 	    	frame.dispose();
 			GUI G1 = new GUI();	
