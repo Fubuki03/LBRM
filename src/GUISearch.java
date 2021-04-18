@@ -18,6 +18,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 public class GUISearch{
 	private JFrame frame;
@@ -40,6 +41,9 @@ public class GUISearch{
 		model.addColumn("Name");
 		model.addColumn("Vorname");
 		model.addColumn("E-Mail"); 
+		
+		TableColumn column = Users.getColumnModel().getColumn(3);
+		column.setPreferredWidth(250);
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
@@ -66,12 +70,21 @@ public class GUISearch{
 		panel.add(edit);
 	    edit.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-
-		    System.out.println(Ergebniss);
-
-	        	
-	        	
-	        	
+	        
+	        int column = 0;
+		    int row = Users.getSelectedRow();
+		    String value = Users.getModel().getValueAt(row, column).toString();
+		    
+		    Angestellter A = Actions.GetUserbyID(Integer.parseInt(value));
+		    
+	        System.out.println(A.getClass().getName());
+		    if ( "Externer" == A.getClass().getName()) {
+		    	DetailsX G9 = new DetailsX(A);
+		    	frame.dispose();
+		    }else {
+		    	DetailsM G10 = new DetailsM(A);
+		    	frame.dispose();
+		    }	
 	        }  
 	        });
 
@@ -79,8 +92,12 @@ public class GUISearch{
 		panel.add(delete);
 	    delete.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        frame.dispose();    
-//	        GUIremove G3 = new GUIremove(Users.get);      
+	        frame.dispose();
+	        int column = 0;
+	        int row = Users.getSelectedRow();
+	        String value = Users.getModel().getValueAt(row, column).toString();
+	        
+	        GUIremove G3 = new GUIremove(Integer.parseInt(value));      
 	        }  
 	        });  
 		
