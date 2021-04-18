@@ -28,6 +28,8 @@ public class GUIaddM{
 
 	private void initialize() {
 		
+    	Actions Actions = new Actions();
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -154,7 +156,6 @@ public class GUIaddM{
 		    newUser.setWohnort(home.getText());
 		    newUser.setID(Integer.parseInt(id.getText()));
 		    newUser.setGeburtsjahr(birthdate.getText());
-		    System.out.println(workgroup.getSelectedItem());
 		    newUser.setArbeitsgruppe((Arbeitsgruppe)workgroup.getSelectedItem());
 		    newUser.setExternal(false);
 		    newUser.setUsername(username.getText());
@@ -162,10 +163,7 @@ public class GUIaddM{
 		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
 			frame.dispose();
 			GUI G1 = new GUI();
-			boolean ret = Actions.AddAngestellter(newUser);
-			if (ret == false) {
-			Error1 Error = new Error1();
-			}
+			Actions.AddAngestellter(newUser);
 	        }  
 	        });  
 	    
