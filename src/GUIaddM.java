@@ -161,9 +161,9 @@ public class GUIaddM{
 		    newUser.setUsername(username.getText());
 		    newUser.setPassword(password.getText());
 		    newUser.setVertragsnr(Integer.parseInt(vnumber.getText()));
+			Actions.AddAngestellter(newUser);
 			frame.dispose();
 			GUI G1 = new GUI();
-			Actions.AddAngestellter(newUser);
 	        }  
 	        });  
 	    
