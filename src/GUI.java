@@ -17,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 
 public class GUI{
@@ -30,8 +31,6 @@ public class GUI{
 
 	private void initialize() {
 		
-		
-		
     	Actions Actions = new Actions();
     	
     	DefaultTableModel model = new DefaultTableModel(); 
@@ -41,6 +40,9 @@ public class GUI{
 		model.addColumn("Name");
 		model.addColumn("Vorname");
 		model.addColumn("E-Mail"); 
+		
+		TableColumn column = Users.getColumnModel().getColumn(3);
+		column.setPreferredWidth(250);
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
@@ -77,11 +79,11 @@ public class GUI{
 	        System.out.println(A.getClass().getName());
 		    if ( "Externer" == A.getClass().getName()) {
 		    	DetailsX G9 = new DetailsX(A);
+		    	frame.dispose();
 		    }else {
 		    	DetailsM G10 = new DetailsM(A);
-		    }
-	        	
-	        	
+		    	frame.dispose();
+		    }	
 	        }  
 	        });
 
