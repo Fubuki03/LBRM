@@ -26,6 +26,8 @@ public class GUIaddX{
 
 	private void initialize() {
 		
+    	Actions Actions = new Actions();
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -138,10 +140,7 @@ public class GUIaddX{
 			newUser.setArbeitsgruppe((Arbeitsgruppe) workgroup.getSelectedItem());
 			newUser.setExternal(false);
 			newUser.setContractor(contractor.getText());
-			boolean ret = Actions.AddAngestellter(newUser);
-			if (ret == false) {
-			Error1 Error = new Error1();
-			}
+			Actions.AddAngestellter(newUser);
 	    	frame.dispose();
 			GUI G1 = new GUI();	
 	    	}  
