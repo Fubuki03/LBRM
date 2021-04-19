@@ -16,7 +16,6 @@ public class Actions {
 	public ArrayList<Angestellter> getAllUsers() {
 		return Data.getInstance().getAllUsers();
 	}
-
 	public void DeleteUser(Angestellter A) {
 		Data.getInstance().remove(A);
 	}
@@ -36,9 +35,8 @@ public class Actions {
 				|| suche.equals(a.getVorname())
 				|| suche.equals(a.getWohnort()))
 			|| (a instanceof Externer && ((Externer)a).getContractor().equals(suche)) 
-			|| (a instanceof Mitarbeiter && ((Mitarbeiter)a).getName().equals(suche)
-				|| ((Mitarbeiter)a).getName().equals(suche) 
-				|| ((Mitarbeiter)a).getPassword().equals(suche))).collect(Collectors.toList());
+			|| (a instanceof Mitarbeiter && (Integer.toString(((Mitarbeiter)a).getVertragsnr()).toString().equals(suche)
+				|| ((Mitarbeiter)a).getUsername().equals(suche)))).collect(Collectors.toList());
 		return filtertusers;
 	}
 
