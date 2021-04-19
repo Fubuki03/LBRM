@@ -110,7 +110,8 @@ public class GUI{
 	    search.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
 	        List<Angestellter> ret = Actions.search(searchtxt.getText());
-	        frame.dispose();    
+	        frame.dispose();
+	        System.out.println(ret);
 	        GUISearch G7 = new GUISearch(ret);
 	        }  
 	        });  
