@@ -100,19 +100,7 @@ public class GUISearch{
 	        GUIremove G3 = new GUIremove(Integer.parseInt(value));      
 	        }  
 	        });  
-		
-		JTextField searchtxt = new JTextField();
-		searchtxt.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel.add(searchtxt);
-		searchtxt.setColumns(10);
-		
-		JButton search = new JButton("Suchen");
-		panel.add(search);
-	    search.addActionListener(new ActionListener(){  
-	        public void actionPerformed(ActionEvent e){  
-	        List<Angestellter> ret = Actions.search(searchtxt.getText());
-	        }  
-	        });  
+		 
 		
 		JButton cancel = new JButton("Abbrechen");
 		panel.add(cancel);
